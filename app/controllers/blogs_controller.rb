@@ -3,7 +3,7 @@
 class BlogsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
 
-  before_action :set_blog, only: %i[show update destroy]
+  before_action :set_blog, only: %i[show]
   before_action :set_my_blog, only: %i[edit update destroy]
 
   def index
