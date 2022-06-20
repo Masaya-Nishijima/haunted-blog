@@ -13,11 +13,9 @@
       </div>
     <% end %>
     <div class="blog-content">
-      <% blog.content.split(/\n|\r|\r\n/).each do | line | %>
-        <p>
-          <%= line %>
-        </p>
-      <% end %>
+      <p>
+        <%= format_content(blog) %>
+      </p>
     </div>
     <% if user_signed_in? && !blog.secret? %>
       <% liking_users_path = api_blog_liking_users_path(blog, format: :json) %>
